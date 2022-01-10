@@ -1,0 +1,493 @@
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [,] A = new int[3,3];
+    int [,] B = new int[3,3];
+    int [,] C = new int[3,3];
+    int [,] D = new int[3,3];
+    int [,] E = new int[3,3];
+
+    // A)
+    Console.WriteLine("Lendo Matriz A:");
+    leMatriz(A);
+    Console.WriteLine("Lendo Matriz B:");
+    leMatriz(B);
+
+    // B)
+    somaMatriz(A, B, C);
+    Console.WriteLine("\nMatriz C: Soma de A e B:");
+    imprimeMatriz(C);
+
+    // C)
+    Console.WriteLine("Soma da Diagonal de C: {0}", somaDiagonal(C));
+
+   // D)
+   transpoeMatriz(C, D);
+   Console.WriteLine("\nMatriz Trasposta C:");
+   imprimeMatriz(D);
+
+   // E)
+   calculaMatrizMaior(A, B, E);
+   Console.WriteLine("\nMatriz E: Maior de A e B:");
+   imprimeMatriz(E);
+  }
+
+  static void leMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write("Digite o elemento [{0}, {1}]: ", lin, col);
+        matriz[lin,col] = int.Parse(Console.ReadLine());
+      }
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      Console.WriteLine();
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+    Console.WriteLine();
+  }
+
+  static void somaMatriz(int [,] A, int [,] B, int [,] C)
+  {
+    for (int i=0; i < A.GetLength(0); i++) {
+      for (int j=0; j < A.GetLength(1); j++) {
+        C[i,j] = A[i,j] + B[i,j];
+      }
+    }
+  }
+
+  static int somaDiagonal(int [,] A)
+  {
+    int soma = 0;
+    for (int i=0; i < A.GetLength(0); i++) {
+        soma = soma + A[i,i];
+    }  
+    return soma;
+  }
+
+
+  static void transpoeMatriz(int [,] A, int [,] T)
+  {
+    for (int i=0; i < A.GetLength(0); i++) {
+      for (int j=0; j < A.GetLength(1); j++) {
+        T[j,i] = A[i,j];
+      }
+    }
+  }
+
+  
+  static void calculaMatrizMaior(int [,] A, int [,] B, int [,] E)
+  {
+    for (int i=0; i < A.GetLength(0); i++) {
+      for (int j=0; j < A.GetLength(1); j++) {
+        if (A[i,j] > B[i,j]) {
+           E[i,j] = A[i,j];
+        } else {
+          E[i,j] = B[i,j];
+        }
+      }
+    }
+  }
+}
+/*
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [,] matriz = new int[3,3];
+    int temp, i, j;
+
+    leMatriz(matriz);
+    
+    imprimeMatriz(matriz);
+
+    for (j=0; j<matriz.GetLength(1); j++) {
+      temp = matriz[0,j];
+      matriz[0,j] = matriz[2,j];
+      matriz[2,j] = temp;
+    }
+
+    imprimeMatriz(matriz);
+
+    for (i=0, j=matriz.GetLength(0)-1; i < matriz.GetLength(0); i++, j--) {
+      temp = matriz[i,j];
+      matriz[i,j] = matriz[i,i];
+      matriz[i,i] = temp;
+    }  
+
+    imprimeMatriz(matriz);
+  }
+
+  static void leMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write("Digite o elemento [{0}, {1}]: ", lin, col);
+        matriz[lin,col] = int.Parse(Console.ReadLine());
+      }
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      Console.WriteLine();
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+    Console.WriteLine();
+  }
+
+}
+/*
+
+/*
+using System;
+
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [] numeros = new int[12];
+
+    leVetor(numeros);
+
+    if ( testaVetor(numeros) ) {
+      Console.WriteLine("Está ordenado.");
+    } else {
+      Console.WriteLine("Não está ordenado.");
+    }
+
+  }
+  static void leVetor(int [] vetor)
+  {
+    for (int i = 0; i < vetor.Length; i++) {
+      Console.Write("Digite o valor para [{0}]: ", i+1);
+      vetor[i] = int.Parse(Console.ReadLine());
+    }
+  }
+
+  static bool testaVetor(int [] vetor) 
+  {
+    for(int i=0; i < vetor.Length -1; i++) {
+      if (vetor[i] > vetor[i+1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
+}
+/*
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    Conta c1 = new Conta();
+    Conta c2 = new Conta();
+
+    c1.cadastrarConta();
+    c2.cadastrarConta();
+
+    c2.mostrarConta();
+    c1.mostrarConta();
+  }
+}
+
+class Conta 
+{
+  private int numConta;
+  private string titularConta;
+  private double saldoConta;
+
+  public void cadastrarConta() 
+  {
+     Console.WriteLine("Informe numero da conta:");
+     numConta = int.Parse(Console.ReadLine());
+
+     Console.WriteLine("Informe o titular da conta:");
+     titularConta = Console.ReadLine();
+
+     Console.WriteLine("Informe o saldo da conta:");
+     saldoConta = double.Parse(Console.ReadLine());
+     
+  }
+
+  public void mostrarConta()
+  {
+     Console.WriteLine("\nNumero da conta:" + numConta);
+     Console.WriteLine("Titular da conta:" + titularConta);
+     Console.WriteLine("Saldo da conta:" + saldoConta);
+  }
+}
+/*
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    Conta c1 = new Conta();
+    Conta c2 = new Conta();
+
+    c1.cadastrarConta();
+    c2.cadastrarConta();
+
+    c2.mostrarConta();
+    c1.mostrarConta();
+    
+
+    c1.deposita(250);
+    c2.deposita(-100);
+
+    c1.saca(1200);
+    c2.saca(1200);
+
+    c2.mostrarConta();
+    c1.mostrarConta();
+    
+  }
+}
+
+class Conta 
+{
+  private int numConta;
+  private string titularConta;
+  private double saldoConta;
+
+  public void cadastrarConta() 
+  {
+     Console.WriteLine("Informe numero da conta:");
+     numConta = int.Parse(Console.ReadLine());
+
+     Console.WriteLine("Informe o titular da conta:");
+     titularConta = Console.ReadLine();
+
+     Console.WriteLine("Informe o saldo da conta:");
+     saldoConta = double.Parse(Console.ReadLine());
+     
+  }
+
+  public void mostrarConta()
+  {
+     Console.WriteLine("\nNumero da conta:" + numConta);
+     Console.WriteLine("Titular da conta:" + titularConta);
+     Console.WriteLine("Saldo da conta:" + saldoConta);
+  }
+
+  public bool saca(double valor)
+  {
+    if (valor <= saldoConta) {
+       saldoConta = saldoConta - valor;
+       return true;
+    } 
+    return false;
+  }
+
+  public void deposita(double valor)
+  {
+    if (valor > 0)
+       saldoConta += valor;
+  }
+}
+/*
+
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    Conta c1 = new Conta();
+    Conta c2 = new Conta();
+    int numero;
+
+    c1.cadastrarConta();
+    c2.cadastrarConta();
+
+    c2.mostrarConta();
+    c1.mostrarConta();
+    
+
+    c1.deposita(250);
+    c2.deposita(-100);
+
+    c1.saca(1200);
+    c2.saca(1200);
+
+    c2.transfere(200, c1);
+
+    c2.mostrarConta();
+    c1.mostrarConta();
+    
+  }
+}
+
+class Conta 
+{
+  private int numConta;
+  private string titularConta;
+  private double saldoConta;
+
+  public void cadastrarConta() 
+  {
+     Console.WriteLine("Informe numero da conta:");
+     numConta = int.Parse(Console.ReadLine());
+
+     Console.WriteLine("Informe o titular da conta:");
+     titularConta = Console.ReadLine();
+
+     Console.WriteLine("Informe o saldo da conta:");
+     saldoConta = double.Parse(Console.ReadLine());
+     
+  }
+
+  public void mostrarConta()
+  {
+     Console.WriteLine("\nNumero da conta:" + numConta);
+     Console.WriteLine("Titular da conta:" + titularConta);
+     Console.WriteLine("Saldo da conta:" + saldoConta);
+  }
+
+  public bool saca(double valor)
+  {
+    if (valor <= saldoConta) {
+       saldoConta = saldoConta - valor;
+       return true;
+    } 
+    return false;
+  }
+
+  public void deposita(double valor)
+  {
+    if (valor > 0)
+       saldoConta += valor;
+  }
+
+  public bool transfere(double valor, Conta destino)
+  {
+    if (valor > 0) {
+      if (saca(valor)) {
+         destino.deposita(valor);
+         return true;
+      }
+    }
+    return false;
+  }
+}
+/*
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+     Endereco e = new Endereco("30000", "Rua", "Guarani", "100 apto 102", "Centro", "Belzonte", "MG", 1.20394823, -1.2039443);
+
+     Console.WriteLine(e);
+  }
+}
+
+class Endereco
+{
+    private string cep;
+    private string tipoLogradouro;
+    private string logradouro;
+    private string complemento;
+    private string bairro;
+    private string cidade;
+    private string estado;
+    private double longitude;
+    private double latitude;
+    
+    public override string ToString() 
+    { 
+       return "\nCEP         : " + cep +
+              "\nTipo        : " + tipoLogradouro +
+              "\nLogradouro  : " + logradouro +
+              "\nComplemento : " + complemento +
+              "\nBairro      : " + bairro +
+              "\nCidade      : " + cidade +
+              "\nEstado      : " + estado +
+              "\nLongitude   : " + longitude +
+              "\nLatitude    : " + latitude;
+    }
+
+    public string getCep()
+    {
+      return cep;
+    }
+    public void setCep(string cep)
+    {
+      this.cep = cep;
+    }
+
+    public Endereco() { }
+
+    public Endereco(string cep, string tipoLogradouro, string logradouro, string complemento, string bairro, string cidade, string estado)
+    {
+        this.cep            = cep;
+        this.tipoLogradouro = tipoLogradouro;
+        this.logradouro     = logradouro;
+        this.complemento    = complemento;
+        this.bairro         = bairro;;
+        this.cidade         = cidade;
+        this.estado         = estado;
+    }
+
+    public Endereco(string cep, string tipoLogradouro, string logradouro, string bairro, string cidade, string estado)
+    {
+        this.cep            = cep;
+        this.tipoLogradouro = tipoLogradouro;
+        this.logradouro     = logradouro;
+        this.bairro         = bairro;;
+        this.cidade         = cidade;
+        this.estado         = estado;
+    }
+
+    public Endereco(string cep, string tipoLogradouro, string logradouro, string complemento, string bairro, string cidade, string estado, double longitude, double latitude)
+    {
+        this.cep            = cep;
+        this.tipoLogradouro = tipoLogradouro;
+        this.logradouro     = logradouro;
+        this.complemento    = complemento;
+        this.bairro         = bairro;
+        this.cidade         = cidade;
+        this.estado         = estado;
+        this.longitude      = longitude;
+        this.latitude       = latitude;
+    }
+
+    public Endereco(double longitude, double latitude)
+    {
+        this.longitude      = longitude;
+        this.latitude       = latitude;
+    }
+
+    public Endereco(string cep)
+    {
+        this.cep            = cep;
+    }
+}
+/*

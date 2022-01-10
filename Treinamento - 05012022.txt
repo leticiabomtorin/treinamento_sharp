@@ -1,0 +1,265 @@
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    Produto p1 = new Produto("001", "mouse", "informatica", 300.0, 10.0, 8.4, 22, 10.5);
+    ItemDeVenda i1 = new ItemDeVenda(p1, 10);
+
+    Console.WriteLine("SubTotal = {0}", i1.getSubTotal());
+    p1.
+  }
+}
+
+class Produto 
+{
+    private string idProduto;
+    private string nome;
+    private string categoria;
+    private double preco;    
+    private string marca;
+    private string modelo;
+    private double altura;    
+    private double largura;    
+    private double comprimento;    
+    private double peso;   
+
+    public double getPreco()
+    {
+       return preco;
+    }    
+
+    public double getAltura()
+    {
+       return altura;    
+    }    
+
+    public double getLargura()
+    {
+       return largura;    
+    }    
+
+    public double getComprimento()
+    {
+       return comprimento;    
+    }    
+
+    public double getPeso()
+    {
+       return peso;   
+    }    
+
+
+    public Produto() { }
+
+    public Produto(string idProduto, string nome, string categoria, double preco, double altura, double largura, double comprimento, double peso) 
+    {
+      this.idProduto   = idProduto;
+      this.nome        = nome;
+      this.categoria   = categoria;
+      this.preco       = preco;    
+      this.altura      = altura;    
+      this.largura     = largura;    
+      this.comprimento = comprimento;    
+      this.peso        = peso;   
+    }
+
+    public Produto(string idProduto, string nome, double preco, double altura, double largura, double comprimento, double peso) 
+    {
+      this.idProduto   = idProduto;
+      this.nome        = nome;
+      this.preco       = preco;    
+      this.altura      = altura;    
+      this.largura     = largura;    
+      this.comprimento = comprimento;    
+      this.peso        = peso;   
+    }
+
+}
+
+class ItemDeVenda 
+{
+   private Produto produto;
+   private int quantidade;
+   private double subTotal;
+
+   private double calcularSubTotal()
+   {
+      return quantidade * produto.getPreco();
+   }
+
+   public void atualizarProduto(Produto produto, int quantidade) 
+   { 
+      this.produto    = produto;
+      this.quantidade = quantidade;
+      subTotal        = calcularSubTotal();
+   }
+
+   public void setQuantidade(int valor)
+   {
+       quantidade = valor;
+       subTotal   = calcularSubTotal();
+   }
+
+   public Produto getProduto()
+   {
+      return produto;   
+   }   
+
+   public int getQuantidade()
+   {
+      return quantidade;   
+   }   
+
+   public double getSubTotal()
+   {
+      return subTotal;   
+   }   
+
+   public ItemDeVenda() { }
+
+   public ItemDeVenda(Produto produto, int quantidade) 
+   { 
+      atualizarProduto(produto, quantidade);
+   }
+}
+/*
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    Produto p1 = new Produto("001", "mouse", "informatica", 300.0, 10.0, 8.4, 22, 10.5);
+    ItemDeVenda i1 = new ItemDeVenda(p1, 10);
+
+    Console.WriteLine("SubTotal = {0}", i1.getSubTotal());
+    p1.setPreco(400);
+    Console.WriteLine("SubTotal = {0}", i1.getSubTotal());
+    i1.setQuantidade(10);
+    Console.WriteLine("SubTotal = {0}", i1.getSubTotal());
+  }
+}
+
+class Produto 
+{
+    private string idProduto;
+    private string nome;
+    private string categoria;
+    private double preco;    
+    private string marca;
+    private string modelo;
+    private double altura;    
+    private double largura;    
+    private double comprimento;    
+    private double peso;   
+
+    public double getPreco()
+    {
+       return preco;
+    }    
+
+    public void setPreco(double valor)
+    {
+       preco = valor;
+    }   
+
+    public double getAltura()
+    {
+       return altura;    
+    }    
+
+    public double getLargura()
+    {
+       return largura;    
+    }    
+
+    public double getComprimento()
+    {
+       return comprimento;    
+    }    
+
+    public double getPeso()
+    {
+       return peso;   
+    }    
+ 
+
+
+    public Produto() { }
+
+    public Produto(string idProduto, string nome, string categoria, double preco, double altura, double largura, double comprimento, double peso) 
+    {
+      this.idProduto   = idProduto;
+      this.nome        = nome;
+      this.categoria   = categoria;
+      this.preco       = preco;    
+      this.altura      = altura;    
+      this.largura     = largura;    
+      this.comprimento = comprimento;    
+      this.peso        = peso;   
+    }
+
+    public Produto(string idProduto, string nome, double preco, double altura, double largura, double comprimento, double peso) 
+    {
+      this.idProduto   = idProduto;
+      this.nome        = nome;
+      this.preco       = preco;    
+      this.altura      = altura;    
+      this.largura     = largura;    
+      this.comprimento = comprimento;    
+      this.peso        = peso;   
+    }
+
+}
+
+class ItemDeVenda 
+{
+   private Produto produto;
+   private int quantidade;
+   private double subTotal;
+
+   private double calcularSubTotal()
+   {
+      return quantidade * produto.getPreco();
+   }
+
+   public void atualizarProduto(Produto produto, int quantidade) 
+   { 
+      this.produto    = produto;
+      this.quantidade = quantidade;
+      subTotal        = calcularSubTotal();
+   }
+
+   public void setQuantidade(int valor)
+   {
+       quantidade = valor;
+       subTotal   = calcularSubTotal();
+   }
+
+   public Produto getProduto()
+   {
+      return produto;   
+   }   
+
+   public int getQuantidade()
+   {
+      return quantidade;   
+   }   
+
+   public double getSubTotal()
+   {
+      return subTotal;   
+   }   
+
+   public ItemDeVenda() { }
+
+   public ItemDeVenda(Produto produto, int quantidade) 
+   { 
+      atualizarProduto(produto, quantidade);
+   }
+}
+/*

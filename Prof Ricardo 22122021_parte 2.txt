@@ -1,0 +1,19 @@
+
+using System;
+class Vetores {
+  static void Main(string[] args) 
+  {
+     // Inserindo nomes ao vetor pessoas
+     string[] pessoas = {"Pedro", "Ana", "Roberta", "Flávia", "Renata"};
+     // Retornando o número de registros encontrados dentro do vetor pessoas
+    Console.WriteLine(pessoas.Length);
+    
+    // Sistema de retorno desesérador
+    Console.WriteLine(pessoas[0]);
+    Console.WriteLine(pessoas[1]);
+    Console.WriteLine(pessoas[2]);
+    Console.WriteLine(pessoas[3]);
+    Console.WriteLine(pessoas[4]);
+    Console.WriteLine(pessoas[5]);
+  }
+}

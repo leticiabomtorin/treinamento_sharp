@@ -1,0 +1,1008 @@
+/*using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int num, posicao;
+    int tam = 12;
+    int [] numeros;
+    numeros = new int[tam];
+
+    leVetor(numeros);
+    
+    Console.Write("Informe um numero para pesquisa: ");
+    num = int.Parse(Console.ReadLine());
+
+    // retorna -1 se nao achou
+    posicao = pesquisaVetor(numeros, num); 
+    
+    if (posicao == -1) {
+      Console.WriteLine("Numero não encontrado!");
+    } else {
+      Console.WriteLine("Numero encontrado na posição {0}.", posicao+1);
+    }
+  }
+
+  static void leVetor(int [] vetor)
+  {
+    for (int i = 0; i < vetor.Length; i++) {
+      Console.Write("Digite o valor para [{0}]: ", i+1);
+      vetor[i] = int.Parse(Console.ReadLine());
+    }
+  }
+    
+  static int pesquisaVetor(int []vetor, int numero)
+  {
+    for(int i=0; i < vetor.Length; i++) {
+      if (vetor[i] == numero) {
+        return i;
+      }
+    }
+    return -1;
+  } 
+}/*
+
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [] numeros = new int[8];
+    double media;
+
+    leVetor(numeros);
+      
+    media = mediaVetor(numeros); 
+
+    Console.WriteLine("A média calculada é: {0}", media);
+    Console.WriteLine("Valores acima da Média:");
+    for (int i=0; i < 8; i++) {
+       if (numeros[i] > media) {
+         Console.WriteLine(numeros[i]);
+       }
+    }    
+  }
+
+  static void leVetor(int [] vetor)
+  {
+    for (int i = 0; i < vetor.Length; i++) {
+      Console.Write("Digite o valor para [{0}]: ", i+1);
+      vetor[i] = int.Parse(Console.ReadLine());
+    }
+  }
+    
+  static double mediaVetor(int []vetor)
+  {
+    double soma =0;
+    for(int i=0; i < vetor.Length; i++) {
+      soma = soma + vetor[i];
+    }
+    return soma/vetor.Length;
+  } 
+}
+/*
+
+
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [] numeros = new int[10];
+
+    leVetor(numeros);
+    inverteVetor(numeros); 
+    imprimeVetor(numeros); 
+  }
+
+  static void leVetor(int [] vetor)
+  {
+    for (int i = 0; i < vetor.Length; i++) {
+      Console.Write("Digite o valor para [{0}]: ", i+1);
+      vetor[i] = int.Parse(Console.ReadLine());
+    }
+  }
+  
+  static void inverteVetor(int [] vetor)
+  { 
+    int i, j, temp;
+
+    for (i=0, j=vetor.Length; i < j ; i++, j--) {
+      temp = vetor[i];
+      vetor[i] = vetor[j];
+      vetor[j] = temp;
+    }
+  }
+    
+  static void imprimeVetor(int [] vetor)
+  {
+    for (int i = 0; i < vetor.Length; i++) {
+      Console.Write("[{0}]: ", i+1);
+    }
+  }
+ 
+}
+/*
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [] numeros = new int[10];
+
+    leVetor(numeros);
+    inverteVetor(numeros); 
+    imprimeVetor(numeros); 
+  }
+
+  static void leVetor(int [] vetor)
+  {
+    for (int i = 0; i < vetor.Length; i++) {
+      Console.Write("Digite o valor para [{0}]: ", i+1);
+      vetor[i] = int.Parse(Console.ReadLine());
+    }
+  }
+  
+  static void inverteVetor(int [] vetor)
+  { 
+    int i, j, temp;
+
+    for (i=0, j=vetor.Length-1; i < j ; i++, j--) {
+      temp = vetor[i];
+      vetor[i] = vetor[j];
+      vetor[j] = temp;
+    }
+  }
+    
+  static void imprimeVetor(int [] vetor)
+  {
+    for (int i = 0; i < vetor.Length; i++) {
+      Console.WriteLine("[{0}]: {1}", i+1, vetor[i]);
+    }
+  }
+ 
+}
+/*
+
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [] numeros = new int[10];
+
+    leVetor(numeros);
+    inverteVetor(numeros); 
+    imprimeVetor(numeros); 
+  }
+
+  static void leVetor(int [] vetor)
+  {
+    for (int i = 0; i < vetor.Length; i++) {
+      Console.Write("Digite o valor para [{0}]: ", i+1);
+      vetor[i] = int.Parse(Console.ReadLine());
+    }
+  }
+  
+  static void inverteVetor(int [] vetor)
+  { 
+    int i, j, temp;
+
+    for (i=0, j=vetor.Length-1; i < j ; i++, j--) {
+      temp = vetor[i];
+      vetor[i] = vetor[j];
+      vetor[j] = temp;
+    }
+  }
+    
+  static void imprimeVetor(int [] vetor)
+  {
+    for (int i = 0; i < vetor.Length; i++) {
+      Console.WriteLine("[{0}]: {1}", i+1, vetor[i]);
+    }
+  }
+ 
+}
+/*
+
+
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [] numeros = new int[12];
+
+    leVetor(numeros);
+
+    if ( testaVetor(numeros) ) {
+      Console.WriteLine("Está ordenado.");
+    } else {
+      Console.WriteLine("Não está ordenado.");
+    }
+
+  }
+  static void leVetor(int [] vetor)
+  {
+    for (int i = 0; i < vetor.Length; i++) {
+      Console.Write("Digite o valor para [{0}]: ", i+1);
+      vetor[i] = int.Parse(Console.ReadLine());
+    }
+  }
+
+  static bool testaVetor(int [] vetor) 
+  {
+    for(int i=0; i<vetor.Length; i++) {
+      if (vetor[i] > vetor[i+1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
+}/*
+
+/*
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int[,] mat = new int[3, 3];
+    int cont = 0;
+    for (int lin = 0; lin < 3; lin++) 
+    {
+      for(int col = 0; col<3; col++) //Preenchendo a matriz
+      {
+          Console.Write("Digite um valor: ");
+          mat[lin, col] = int.Parse(Console.ReadLine());
+          if (mat[lin, col] > 15 && mat[lin, col] < 25) 
+          {
+              cont++;
+          }
+      }//fim for coluna
+    }//fim for linha
+
+    Console.WriteLine("\n\nValores da matriz: ");
+    for (int lin = 0; lin < 3; lin++)
+    {
+        Console.Write("\n");
+        for (int col = 0; col < 3; col++) //Mostrando a matriz
+        {
+            Console.Write(mat[lin, col] + "\t");
+        }//fim for coluna
+    }//fim for linha
+
+    Console.WriteLine("\n\nA quantidade de elementos entre 15 e 25 é: " + cont);
+  }
+}/*
+
+/*
+
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [,] matriz = new int[4,5];
+    int [] vetor   = new int[5];
+
+    leMatriz(matriz, 4, 5);
+    calculaSomas(matriz, 4, 5, vetor);
+    imprimeMatriz(matriz, 4, 5);
+    imprimeVetor(vetor);
+  }
+
+  static void leMatriz(int [,] matriz, int linhas, int colunas) 
+  {
+    for (int lin=0; lin < linhas; lin++) {
+      for (col=0; col < colunas; col++) {
+        Console.Write("Digite o elemento [{0}, {1}]: ", lin, col);
+        matriz[lin,col] = int.Parse(Console.ReadLine());
+      }
+    }
+  }
+
+  static void calculaSomas(int [,] matriz, int linhas, int colunas, int [] vetor) 
+  {
+    int soma;
+    for (col=0; col < colunas; col++) {
+        soma = 0;
+        for (int lin=0; lin < linhas; lin++) {
+          soma = soma + matriz[lin,col];
+        }
+        vetor[col] = soma;
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz, int linhas, int colunas) 
+  {
+    for (int lin=0; lin < linhas; lin++) {
+      Console.WriteLine();
+      for (col=0; col < colunas; col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz, int linhas, int colunas) 
+  {
+    for (int lin=0; lin < linhas; lin++) {
+      Console.WriteLine();
+      for (col=0; col < colunas; col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+  }
+}
+/*
+
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [,] matriz = new int[4,5];
+    int [] vetor   = new int[5];
+
+    leMatriz(matriz, 4, 5);
+    calculaSomas(matriz, 4, 5, vetor);
+    imprimeMatriz(matriz, 4, 5);
+    imprimeVetor(vetor);
+  }
+
+  static void leMatriz(int [,] matriz, int linhas, int colunas) 
+  {
+    for (int lin=0; lin < linhas; lin++) {
+      for (col=0; col < colunas; col++) {
+        Console.Write("Digite o elemento [{0}, {1}]: ", lin, col);
+        matriz[lin,col] = int.Parse(Console.ReadLine());
+      }
+    }
+  }
+
+  static void calculaSomas(int [,] matriz, int linhas, int colunas, int [] vetor) 
+  {
+    int soma;
+    for (col=0; col < colunas; col++) {
+        soma = 0;
+        for (int lin=0; lin < linhas; lin++) {
+          soma = soma + matriz[lin,col];
+        }
+        vetor[col] = soma;
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz, int linhas, int colunas) 
+  {
+    for (int lin=0; lin < linhas; lin++) {
+      Console.WriteLine();
+      for (col=0; col < colunas; col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz, int linhas, int colunas) 
+  {
+    for (int lin=0; lin < linhas; lin++) {
+      Console.WriteLine();
+      for (col=0; col < colunas; col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+  }
+}
+/*
+
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [,] matriz = new int[4,5];
+    int [] vetor   = new int[5];
+
+    leMatriz(matriz, 4, 5);
+    calculaSomas(matriz, 4, 5, vetor);
+    imprimeMatriz(matriz, 4, 5);
+    imprimeVetor(vetor);
+  }
+
+  static void leMatriz(int [,] matriz, int linhas, int colunas) 
+  {
+    for (int lin=0; lin < linhas; lin++) {
+      for (int col=0; col < colunas; col++) {
+        Console.Write("Digite o elemento [{0}, {1}]: ", lin, col);
+        matriz[lin,col] = int.Parse(Console.ReadLine());
+      }
+    }
+  }
+
+  static void calculaSomas(int [,] matriz, int linhas, int colunas, int [] vetor) 
+  {
+    int soma;
+    for (int col=0; col < colunas; col++) {
+        soma = 0;
+        for (int lin=0; lin < linhas; lin++) {
+          soma = soma + matriz[lin,col];
+        }
+        vetor[col] = soma;
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz, int linhas, int colunas) 
+  {
+    for (int lin=0; lin < linhas; lin++) {
+      Console.WriteLine();
+      for (int col=0; col < colunas; col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+  }
+
+  static void imprimeVetor(int [] vetor) 
+  {
+    Console.WriteLine();
+    Console.WriteLine();
+    for (int i=0; i < vetor.Length; i++) {
+        Console.Write(vetor[i] + "\t");
+    }
+    
+    Console.WriteLine();
+  }
+}
+/*
+
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [,] matriz = new int[5,5];
+    int soma = 0, linha4 = 0, coluna2 = 0;
+
+    leMatriz(matriz, 5, 5);
+
+    for (int i=0; i < 5; i++) {
+      for (int j=0; j < 5; j++) {
+        soma = soma + matriz[i,j];
+      }
+    }
+    for (int j=0; j < 5; j++) {
+      linha4 = linha4 + matriz[4, j];
+    }
+    for (int i=0; i<5; i++) {
+      coluna2 = coluna2 + matriz[i, 2];
+    }
+    Console.WriteLine("\n\n");
+    imprimeMatriz(matriz, 5, 5);
+    Console.WriteLine("\nSoma da linha 4: {0}", linha4);
+    Console.WriteLine("Soma da coluna 2: {0}", coluna2);
+    Console.WriteLine("Soma total da matriz: {0}", soma);
+}
+
+  static void leMatriz(int [,] matriz, int linhas, int colunas) 
+  {
+    for (int lin=0; lin < linhas; lin++) {
+      for (int col=0; col < colunas; col++) {
+        Console.Write("Digite o elemento [{0}, {1}]: ", lin, col);
+        matriz[lin,col] = int.Parse(Console.ReadLine());
+      }
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz, int linhas, int colunas) 
+  {
+    for (int lin=0; lin < linhas; lin++) {
+      Console.WriteLine();
+      for (int col=0; col < colunas; col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+  }
+/*
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [,] matriz = new int [4,4];
+    double soma=0, media;
+    int maior, menor;
+
+    leMatriz(matriz);
+    maior = matriz[0, 0];
+    menor = matriz[0, 0]; 
+
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        soma = soma + matriz[lin,col];
+      }
+    }
+    media = soma/(matriz.GetLength(0) * matriz.GetLength(1));
+
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      for (int col=0; col < matriz.GetLength(1); col++) {
+         if (matriz[lin,col] > maior) {
+           maior = matriz[lin,col];
+         }
+
+         if (matriz[lin,col] < menor) {
+           menor = matriz[lin, col];
+         }
+      }
+    }
+
+    Console.WriteLine("A media dos elementos = {0}", media);
+    Console.WriteLine("O maior elemento = {0}", maior);
+    Console.WriteLine("O menor elemento = {0}", menor);
+
+    imprimeMatriz(matriz);
+    
+  }
+
+  static void leMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write("Digite o elemento [{0}, {1}]: ", lin, col);
+        matriz[lin,col] = int.Parse(Console.ReadLine());
+      }
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      Console.WriteLine();
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+  }
+}/*
+
+
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [,] matriz = new int [4,4];
+    double soma=0, media;
+    int maior, menor;
+
+    leMatriz(matriz);
+    maior = matriz[0, 0];
+    menor = matriz[0, 0]; 
+
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        soma = soma + matriz[lin,col];
+      }
+    }
+    media = soma/(matriz.GetLength(0) * matriz.GetLength(1));
+
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      for (int col=0; col < matriz.GetLength(1); col++) {
+         if (matriz[lin,col] > maior) {
+           maior = matriz[lin,col];
+         }
+
+         if (matriz[lin,col] < menor) {
+           menor = matriz[lin, col];
+         }
+      }
+    }
+    Console.WriteLine("A média dos elementos = {0}", media);
+    
+  }
+
+  static void leMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write("Digite o elemento [{0}, {1}]: ", lin, col);
+        matriz[lin,col] = int.Parse(Console.ReadLine());
+      }
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      Console.WriteLine();
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+  }
+}
+/*
+
+
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [,] A = new int[3,3];
+    int [,] B = new int[3,3];
+    int [,] C = new int[3,3];
+    int [,] D = new int[3,3];
+    int [,] E = new int[3,3];
+
+    // A)
+    Console.WriteLine("Lendo Matriz A:");
+    leMatriz(A);
+    Console.WriteLine("Lendo Matriz B:");
+    leMatriz(B);
+
+    // B)
+    somaMatriz(A, B, C);
+    Console.WriteLine("Matriz C: Soma de A e B:");
+    imprimeMatriz(C);
+
+    // C)
+    Console.WriteLine("Soma da Diagonal de C: {0}", somaDiagonal(C));
+
+   // D)
+   transpoeMatriz(C, D);
+   imprimeMatriz(D);
+
+   // E)
+   calculaMatrizMaior(A, B, E);
+   imprimeMatriz(E);
+  }
+
+  static void leMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write("Digite o elemento [{0}, {1}]: ", lin, col);
+        matriz[lin,col] = int.Parse(Console.ReadLine());
+      }
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      Console.WriteLine();
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+    Console.WriteLine();
+  }
+
+  static void somaMatriz(int [,] A, int [,] B, int [,] C)
+  {
+    for (int i=0; i < A.GetLength(0); i++) {
+      for (int j=0; j < A.GetLength(1); j++) {
+        C[i,j] = A[i,j] + B[i,j];
+      }
+    }
+  }
+
+}
+/*
+
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [,] A = new int[3,3];
+    int [,] B = new int[3,3];
+    int [,] C = new int[3,3];
+    int [,] D = new int[3,3];
+    int [,] E = new int[3,3];
+
+    // A)
+    Console.WriteLine("Lendo Matriz A:");
+    leMatriz(A);
+    Console.WriteLine("Lendo Matriz B:");
+    leMatriz(B);
+
+    // B)
+    somaMatriz(A, B, C);
+    Console.WriteLine("Matriz C: Soma de A e B:");
+    imprimeMatriz(C);
+
+    // C)
+    Console.WriteLine("Soma da Diagonal de C: {0}", somaDiagonal(C));
+
+   // D)
+   transpoeMatriz(C, D);
+   imprimeMatriz(D);
+
+   // E)
+   calculaMatrizMaior(A, B, E);
+   imprimeMatriz(E);
+  }
+
+  static void leMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write("Digite o elemento [{0}, {1}]: ", lin, col);
+        matriz[lin,col] = int.Parse(Console.ReadLine());
+      }
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      Console.WriteLine();
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+    Console.WriteLine();
+  }
+
+  static void somaMatriz(int [,] A, int [,] B, int [,] C)
+  {
+    for (int i=0; i < A.GetLength(0); i++) {
+      for (int j=0; j < A.GetLength(1); j++) {
+        C[i,j] = A[i,j] + B[i,j];
+      }
+    }
+  }
+
+  static int somaDiagonal(int [,] A)
+  {
+    int soma = 0;
+    for (int i=0; i < A.GetLength(0); i++) {
+        soma = soma + A[i,i];
+      }
+    }
+    return soma;
+  }
+
+
+  static void transpoeMatriz(int [,] A, int [,] T)
+  {
+    for (int i=0; i < A.GetLength(0); i++) {
+      for (int j=0; j < A.GetLength(1); j++) {
+        T[j,i] = A[i,j];
+      }
+    }
+  }
+}
+/*
+
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [,] A = new int[3,3];
+    int [,] B = new int[3,3];
+    int [,] C = new int[3,3];
+    int [,] D = new int[3,3];
+    int [,] E = new int[3,3];
+
+    // A)
+    Console.WriteLine("Lendo Matriz A:");
+    leMatriz(A);
+    Console.WriteLine("Lendo Matriz B:");
+    leMatriz(B);
+
+    // B)
+    somaMatriz(A, B, C);
+    Console.WriteLine("Matriz C: Soma de A e B:");
+    imprimeMatriz(C);
+
+    // C)
+    Console.WriteLine("Soma da Diagonal de C: {0}", somaDiagonal(C));
+
+   // D)
+   transpoeMatriz(C, D);
+   imprimeMatriz(D);
+
+   // E)
+   calculaMatrizMaior(A, B, E);
+   imprimeMatriz(E);
+  }
+
+  static void leMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write("Digite o elemento [{0}, {1}]: ", lin, col);
+        matriz[lin,col] = int.Parse(Console.ReadLine());
+      }
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      Console.WriteLine();
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+    Console.WriteLine();
+  }
+
+  static void somaMatriz(int [,] A, int [,] B, int [,] C)
+  {
+    for (int i=0; i < A.GetLength(0); i++) {
+      for (int j=0; j < A.GetLength(1); j++) {
+        C[i,j] = A[i,j] + B[i,j];
+      }
+    }
+  }
+
+  static int somaDiagonal(int [,] A)
+  {
+    int soma = 0;
+    for (int i=0; i < A.GetLength(0); i++) {
+        soma = soma + A[i,i];
+    }  
+    return soma;
+  }
+
+
+  static void transpoeMatriz(int [,] A, int [,] T)
+  {
+    for (int i=0; i < A.GetLength(0); i++) {
+      for (int j=0; j < A.GetLength(1); j++) {
+        T[j,i] = A[i,j];
+      }
+    }
+  }
+
+  
+  static void calculaMatrizMaior(int [,] A, int [,] B, int [,] E)
+  {
+    for (int i=0; i < A.GetLength(0); i++) {
+      for (int j=0; j < A.GetLength(1); j++) {
+        if (A[i,j] > B[i,j]) {
+           E[i,j] = A[i,j];
+        } else {
+          E[i,j] = B[i,j];
+        }
+      }
+    }
+  }
+}
+/*
+/*
+using System;
+
+class Program
+{
+  static void Main(string[] args)
+  { 
+    int [,] A = new int[3,3];
+    int [,] B = new int[3,3];
+    int [,] C = new int[3,3];
+    int [,] D = new int[3,3];
+    int [,] E = new int[3,3];
+
+    // A)
+    Console.WriteLine("Lendo Matriz A:");
+    leMatriz(A);
+    Console.WriteLine("Lendo Matriz B:");
+    leMatriz(B);
+
+    // B)
+    somaMatriz(A, B, C);
+    Console.WriteLine("\nMatriz C: Soma de A e B:");
+    imprimeMatriz(C);
+
+    // C)
+    Console.WriteLine("Soma da Diagonal de C: {0}", somaDiagonal(C));
+
+   // D)
+   transpoeMatriz(C, D);
+   Console.WriteLine("\nMatriz Trasposta C:");
+   imprimeMatriz(D);
+
+   // E)
+   calculaMatrizMaior(A, B, E);
+   Console.WriteLine("\nMatriz E: Maior de A e B:");
+   imprimeMatriz(E);
+  }
+
+  static void leMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write("Digite o elemento [{0}, {1}]: ", lin, col);
+        matriz[lin,col] = int.Parse(Console.ReadLine());
+      }
+    }
+  }
+
+  static void imprimeMatriz(int [,] matriz) 
+  {
+    for (int lin=0; lin < matriz.GetLength(0); lin++) {
+      Console.WriteLine();
+      for (int col=0; col < matriz.GetLength(1); col++) {
+        Console.Write(matriz[lin, col] + "\t");
+      }
+    }
+    Console.WriteLine();
+  }
+
+  static void somaMatriz(int [,] A, int [,] B, int [,] C)
+  {
+    for (int i=0; i < A.GetLength(0); i++) {
+      for (int j=0; j < A.GetLength(1); j++) {
+        C[i,j] = A[i,j] + B[i,j];
+      }
+    }
+  }
+
+  static int somaDiagonal(int [,] A)
+  {
+    int soma = 0;
+    for (int i=0; i < A.GetLength(0); i++) {
+        soma = soma + A[i,i];
+    }  
+    return soma;
+  }
+
+
+  static void transpoeMatriz(int [,] A, int [,] T)
+  {
+    for (int i=0; i < A.GetLength(0); i++) {
+      for (int j=0; j < A.GetLength(1); j++) {
+        T[j,i] = A[i,j];
+      }
+    }
+  }
+
+  
+  static void calculaMatrizMaior(int [,] A, int [,] B, int [,] E)
+  {
+    for (int i=0; i < A.GetLength(0); i++) {
+      for (int j=0; j < A.GetLength(1); j++) {
+        if (A[i,j] > B[i,j]) {
+           E[i,j] = A[i,j];
+        } else {
+          E[i,j] = B[i,j];
+        }
+      }
+    }
+  }
+}
+/*
+
+
+
+

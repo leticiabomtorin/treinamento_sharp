@@ -1,0 +1,148 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+    double num = 3.656565, truncado;
+
+   /* Console.WriteLine ("Numero = " + num);
+    Console.WriteLine ("Numero = {0} - {1} - {0}", num, num+20);
+    Console.WriteLine ("Numero = {0:0.00}", num);
+    
+    
+    truncado = ( (int)(num * 100) ) /100.0;
+    Console.WriteLine ("Numero = {0}", truncado);
+    */
+    int idade = 6;
+    // solução 1
+    if (idade >=5 && idade <= 7) {
+        Console.WriteLine("Infantil");
+    } else if (idade >= 8 && idade <=10 ) {
+      Console.WriteLine("Juvenil");
+    } else if (idade >= 11 && idade <=15 ) {
+        Console.WriteLine("Adolecente");
+    } else if (idade >= 16 && idade <=30 ) {
+        Console.WriteLine("Adulto");
+    } else {
+        Console.WriteLine("Senior");
+    }
+
+   // solucao 2
+   if (idade > 30 ) {
+     Console.WriteLine("Senior");
+   } else if (idade >= 16) {
+     Console.WriteLine("Adulto")
+   } else if (idade >= 11) {
+     Console.WriteLine("Adolecente")
+   } else if (idade >= 8) {
+     Console.WriteLine("Juvenil")
+   } else if (idade >= 5) {
+     Console.WriteLine("Infantil")
+   } 
+
+    // solução 3
+    switch (idade) {
+      case 5:
+      case 6:
+      case 7:  Console.WriteLine("Infantil"); break;
+      case 8:
+      case 9:
+      case 10:  Console.WriteLine("Juvenil"); break;
+         
+    }
+  }
+}
+
+/*
+class Program {
+  public static void Main (string[] args) {
+    int num1, num2, soma;
+
+
+    Console.WriteLine("Informe um numero : ");
+    num1 = int.Parse(Console.ReadLine());
+    
+    Console.WriteLine("Informe outro numero : ");
+    num2 = int.Parse(Console.ReadLine());
+    
+   
+
+    soma = num1 + num2;
+
+    if (soma > 10) {
+        Console.WriteLine ("Soma = " + soma);  
+    } else {
+        Console.WriteLine ("Não é possível fazer a adição!");
+    }
+
+    
+  }
+}
+
+*/
+/*
+class Program {
+  public static void Main (string[] args) {
+    int numero, invertido;
+    int unid, dez, cent;
+
+
+    Console.WriteLine("Informe um numero com 3 digitos: ");
+    numero = int.Parse(Console.ReadLine());
+    
+    //123 % 10 => 3
+    unid = numero % 10;
+    // 123 / 100 => 1
+    cent = numero / 100;
+    //123 /10 = 12  % 10 => 2
+    dez = (numero / 10) % 10;
+   
+    invertido = unid * 100 + dez * 10 + cent;
+
+    Console.WriteLine ("Numero Invertido = " + unid + dez + cent);
+  }
+}
+*/
+/*
+class Program {
+  public static void Main (string[] args) {
+    double salarioFixo, vendas, comissao, salarioFinal;
+
+    Console.WriteLine("Informe o salário fixo: ");
+    salarioFixo = double.Parse(Console.ReadLine());
+    
+    Console.WriteLine("Informe as vendas: ");
+    vendas = double.Parse(Console.ReadLine());
+    
+    comissao = vendas * 5.5 / 100;
+    salarioFinal = salarioFixo + comissao;
+
+    Console.WriteLine ("Comissão = " + comissao);
+    Console.WriteLine ("Salario Final = " + salarioFinal);
+  }
+}
+
+*/
+/*Exercicio 1
+class Program {
+  public static void Main (string[] args) {
+    int num1, num2;
+    int soma;
+    int mult;
+
+// Entrada
+    Console.WriteLine("Informe o primeiro número:");
+    num1 = int.Parse(Console.ReadLine());
+    
+    Console.WriteLine("Informe o segundo número:");
+    num2 = int.Parse(Console.ReadLine());
+    
+// Processamento
+    soma = num1 + num2;
+    mult = soma * num1;
+
+//Saida
+    Console.WriteLine ("Soma  = " + soma);
+    Console.WriteLine ("Final = " + mult);
+  }
+}
+*/

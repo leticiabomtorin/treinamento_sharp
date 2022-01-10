@@ -1,0 +1,23 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+    int num1, num2, soma;
+    
+    Console.WriteLine ("Informe um numero: ");
+    num1 = int.Parse(Console.ReadLine());
+
+    Console.WriteLine ("Informe outro numero: ");
+    num2 = int.Parse(Console.ReadLine());
+
+    soma =  num1 + num2;
+
+    if (soma > 10) {
+       Console.WriteLine (" Soma - " + soma);
+    } else {
+      Console.WriteLine ("Não é possível fazer a adição!");
+
+    }    
+
+  }
+}
